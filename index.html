@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highlight to Reveal</title>
+  <style>
+    :root { color-scheme: light; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #fff; /* blank page */
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #000; /* default black text */
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 12vh auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      font-size: 1.125rem;
+    }
+
+    /* Normal visible text */
+    .visible-text { color: #000; }
+
+    /* Hidden-until-highlight text */
+    .secret {
+      color: transparent;            /* make it invisible */
+      text-shadow: 0 0 0 transparent;/* keep layout stable */
+      -webkit-text-stroke: 0 transparent; /* avoid faint edges in some browsers */
+      user-select: text;              /* ensure it's selectable */
+    }
+
+    /* When the user highlights it, reveal the text */
+    .secret::selection { color: #000; background: #ffec80; }
+    .secret::-moz-selection { color: #000; background: #ffec80; }
+
+    /* Optional: make the selection for normal text look nice too */
+    ::selection { background: #ffec80; }
+    ::-moz-selection { background: #ffec80; }
+
+    /* Optional helper: a subtle hint */
+    .hint { color: #666; font-size: .95rem; margin-top: .5rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="visible-text">Welcome to part three of the challenge! go to ethanytangcodes.github.io/thestepafterthenextstep for the step after the next step</p>
+
+
+    <p class="secret">you thought it was that easy? go to ethanytangcodes.github.io/theactualstepafterthenextstep for the actual step after the next step</p>
+  </main>
+</body>
+</html>
